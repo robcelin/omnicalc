@@ -105,11 +105,18 @@ class CalculationsController < ApplicationController
 
     @mean = @numbers.sum/@numbers.count
 
-    @variance = 
+    var=[]
+    number =@numbers
+    number.each do |i|
+      @var1=((i-@mean)**2)/@count
+      @var2=var.push(@var1)
+    end
 
-    @standard_deviation =
+    @variance = @var2.sum
 
-    @mode = "Replace this string with your answer."
+    @standard_deviation = Math.sqrt(@variance)
+
+    @mode =
 
     # ================================================================================
     # Your code goes above.
