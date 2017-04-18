@@ -116,7 +116,7 @@ class CalculationsController < ApplicationController
 
     @standard_deviation = Math.sqrt(@variance)
 
-    @mode =
+    @mode = @numbers.group_by(&:itself).values.max_by(&:size).first
 
     # ================================================================================
     # Your code goes above.
