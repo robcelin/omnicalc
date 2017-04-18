@@ -95,7 +95,11 @@ class CalculationsController < ApplicationController
 
     @range = @numbers.max - @numbers.min
 
-    @median =
+    @median = if @count %2 != 0
+                @sorted_numbers[@count/2]
+              else
+                (@sorted_numbers[@count/2]+@sorted_numbers[(@count/2)-1])/2.0
+              end
 
     @sum = @numbers.sum
 
@@ -103,7 +107,7 @@ class CalculationsController < ApplicationController
 
     @variance = 
 
-    @standard_deviation = @numbers.standard_deviation
+    @standard_deviation =
 
     @mode = "Replace this string with your answer."
 
